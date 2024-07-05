@@ -63,18 +63,20 @@ const personGenerator = {
     },
 
     randomGender: function(){
-        let genderValue = (this.randomIntNumber() == 1) ? (this.GENDER_MALE) : (this.GENDER_FEMALE);
-        return genderValue;
+        return this.randomIntNumber() >= 1 ? this.GENDER_MALE : this.GENDER_FEMALE;
+        
     },
 
     randomFirstName: function() {
-        if (this.randomGender() == 'Мужчина'){
-        return this.randomValue(this.firstNameMaleJson);
-        } else{
-        return this.randomValue(this.firstNameFemaleJson);
+        let gender = this.randomGender();
+        let firstNameMale = this.randomValue(this.firstNameMaleJson);
+        let firstNameFemale = this.randomValue(this.firstNameFemaleJson);
+        if (gender == "Мужчина") {
+            return firstNameMale;
+        } else {
+            return firstNameFemale;
         }
     },
-
 
      randomSurname: function() {
 
