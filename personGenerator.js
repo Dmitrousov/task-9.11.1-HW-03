@@ -70,9 +70,9 @@ const personGenerator = {
     randomFirstName: function() {
         if (this.randomGender() === "Мужчина"){
         return this.randomValue(this.firstNameMaleJson);
-        } else
+        } else{
         return this.randomValue(this.firstNameFemaleJson);
-
+        }
     },
 
 
