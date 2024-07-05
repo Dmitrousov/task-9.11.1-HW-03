@@ -68,13 +68,10 @@ const personGenerator = {
     },
 
     randomFirstName: function() {
-        let gender = this.randomGender();
-        let firstNameMale = this.randomValue(this.firstNameMaleJson);
-        let firstNameFemale = this.randomValue(this.firstNameFemaleJson);
-        if (gender == "Мужчина") {
-            return firstNameMale;
+        if (this.person.gender == "Мужчина") {
+            return this.randomValue(this.firstNameMaleJson);
         } else {
-            return firstNameFemale;
+            return this.randomValue(this.firstNameFemaleJson);
         }
     },
 
