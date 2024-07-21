@@ -56,7 +56,7 @@ const personGenerator = {
 
     randomIntNumber: (max = 1, min = 0) => Math.floor(Math.random() * (max - min + 1) + min),
 
-    randomBirthYear: (max = 2000, min = 1970) => Math.floor((Math.random() * 20) + min),
+    randomBirthYear: (max = 2000, min = 1980) => Math.floor((Math.random() * 21) + min),
 
     randomValue: function (json) {
         const obj = JSON.parse(json);
@@ -77,7 +77,32 @@ const personGenerator = {
         }
     },
 
-     randomSurname: function() {
+    /*randomMiddleName: function() {
+        let middleName = this.randomValue(this.firstNameMaleJson);
+        if (this.person.gender == "Мужчина") {
+            if (middleName == "Никита") {
+                middleName = "Никитич";
+                return middleName;
+            } else if (middleName == "Михаил") {
+                middleName = "Михайлович";
+                return middleName;
+                } else
+            middleName = middleName == "Дмитрий", "Андрей" ? middleName = (middleName.slice(0, -1)) + "евич" : middleName = middleName + "ович";    
+            return middleName;
+        } else if (middleName == "Никита") {
+                middleName = "Никитична";
+                return middleName;
+            } else if (middleName == "Михаил") {
+                middleName = "Михайловна";
+                return middleName;
+                } else
+            middleName = middleName == "Дмитрий", "Андрей" ? middleName = (middleName.slice(0, -1)) + "евна" : middleName = middleName + "овна";    
+            return middleName;
+        }
+        
+    },*/
+
+    randomSurname: function() {
         if (this.person.gender == "Мужчина") {
             return this.randomValue(this.surnameJson);
         } else {
@@ -90,6 +115,7 @@ const personGenerator = {
         this.person = {};
         this.person.gender = this.randomGender();
         this.person.firstName = this.randomFirstName();
+        //this.person.middleName = this.randomMiddleName();
         this.person.surname = this.randomSurname();
         this.person.birthYear = this.randomBirthYear();
         return this.person;
