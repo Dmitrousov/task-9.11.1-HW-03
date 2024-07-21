@@ -8,11 +8,12 @@ window.onload = function()
     document.getElementById('birthYearOutput').innerText = initPerson.birthYear;
 };
 
-/*document.querySelector(#default).addEventListener('click', 
-	(event) => {
-	document.getElementById('firstNameOutput').innerText = 'Иван';
-    document.getElementById('surnameOutput').innerText = 'Генерация фамилии';
-    document.getElementById('genderOutput').innerText = 'Генерация пола';
-    document.getElementById('birthYearOutput').innerText = 'Генерация года рождения';
-	}
-);*/
+	document.getElementById('default').addEventListener('click', 
+		(event) => {
+		document.getElementById('firstNameOutput').innerText = 'Иван';
+		document.getElementById('surnameOutput').innerText = 'Генерация фамилии';
+    	document.getElementById('genderOutput').innerText = 'Генерация пола';
+    	document.getElementById('birthYearOutput').innerText = 'Генерация года рождения';
+		console.log('Кнопка нажата!');
+		}
+	);
