@@ -56,6 +56,8 @@ const personGenerator = {
 
     randomIntNumber: (max = 1, min = 0) => Math.floor(Math.random() * (max - min + 1) + min),
 
+    randomBirthYear: (max = 2000, min = 1970) => Math.floor((Math.random() * 20) + min),
+
     randomValue: function (json) {
         const obj = JSON.parse(json);
         const prop = `id_${this.randomIntNumber(obj.count, 1)}`;  // this = personGenerator
@@ -89,6 +91,7 @@ const personGenerator = {
         this.person.gender = this.randomGender();
         this.person.firstName = this.randomFirstName();
         this.person.surname = this.randomSurname();
+        this.person.birthYear = this.randomBirthYear();
         return this.person;
     }
 };
