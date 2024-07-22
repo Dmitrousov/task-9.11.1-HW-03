@@ -51,17 +51,39 @@ const personGenerator = {
         }
     }`,
 
+    birthMonthJson: `{
+        "count": 12,
+        "list": {
+            "id_1": "января",
+            "id_2": "февраля",
+            "id_3": "марта",
+            "id_4": "апреля",
+            "id_5": "мая",
+            "id_6": "июня",
+            "id_7": "июля",
+            "id_8": "августа",
+            "id_9": "сентября",
+            "id_10": "октября",
+            "id_11": "ноября",
+            "id_12": "декабря",
+        }
+    }`,
+
     GENDER_MALE: 'Мужчина',
     GENDER_FEMALE: 'Женщина',
 
     randomIntNumber: (max = 1, min = 0) => Math.floor(Math.random() * (max - min + 1) + min),
-
+    
     randomBirthYear: (max = 2000, min = 1980) => Math.floor((Math.random() * 21) + min),
 
     randomValue: function (json) {
         const obj = JSON.parse(json);
         const prop = `id_${this.randomIntNumber(obj.count, 1)}`;  // this = personGenerator
         return obj.list[prop];
+    },
+
+    randomBirthMonth: function() {
+        return this.randomValue(this.birthMonthJson);
     },
 
     randomGender: function(){
@@ -120,6 +142,7 @@ const personGenerator = {
         this.person.firstName = this.randomFirstName();
         this.person.middleName = this.randomMiddleName();
         this.person.surname = this.randomSurname();
+        this.person.birthMonth = this.randomBirthMonth();
         this.person.birthYear = this.randomBirthYear();
         return this.person;
     }
