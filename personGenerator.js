@@ -77,30 +77,37 @@ const personGenerator = {
         }
     },
 
-    /*randomMiddleName: function() {
+    randomMiddleName: function() {
         let middleName = this.randomValue(this.firstNameMaleJson);
         if (this.person.gender == "Мужчина") {
             if (middleName == "Никита") {
                 middleName = "Никитич";
                 return middleName;
-            } else if (middleName == "Михаил") {
+                } if (middleName == "Михаил") {
                 middleName = "Михайлович";
                 return middleName;
-                } else
-            middleName = middleName == "Дмитрий", "Андрей" ? middleName = (middleName.slice(0, -1)) + "евич" : middleName = middleName + "ович";    
-            return middleName;
+                } if (middleName == "Александр", "Максим", "Иван", "Артем", "Даниил", "Егор") {
+                middleName = middleName + "ович";    
+                return middleName;
+                } else if (middleName == "Дмитрий", "Андрей") {
+                middleName = (middleName.slice(0, -1)) + "евич";
+                return middleName; 
+            }
         } else if (middleName == "Никита") {
                 middleName = "Никитична";
                 return middleName;
-            } else if (middleName == "Михаил") {
+                } if (middleName == "Михаил") {
                 middleName = "Михайловна";
                 return middleName;
-                } else
-            middleName = middleName == "Дмитрий", "Андрей" ? middleName = (middleName.slice(0, -1)) + "евна" : middleName = middleName + "овна";    
-            return middleName;
-        }
-        
-    },*/
+                } if (middleName == "Александр", "Максим", "Иван", "Артем", "Даниил", "Егор") {
+                middleName = middleName + "овна";    
+                return middleName;
+                } else if (middleName == "Дмитрий", "Андрей") {
+                middleName = (middleName.slice(0, -1)) + "евна";
+                return middleName;
+                
+            }    
+    },
 
     randomSurname: function() {
         if (this.person.gender == "Мужчина") {
@@ -115,7 +122,7 @@ const personGenerator = {
         this.person = {};
         this.person.gender = this.randomGender();
         this.person.firstName = this.randomFirstName();
-        //this.person.middleName = this.randomMiddleName();
+        this.person.middleName = this.randomMiddleName();
         this.person.surname = this.randomSurname();
         this.person.birthYear = this.randomBirthYear();
         return this.person;
