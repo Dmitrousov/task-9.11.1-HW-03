@@ -88,11 +88,11 @@ const personGenerator = {
 
     randomBirthDay: function (){
         let birthDay = Math.floor(Math.random() * 28 + 1);
-        if (this.randomBirthMonth == "февраля") {
+        if (this.person.birthMonth == "февраля") {
             return birthDay;
-        } else if (this.randomBirthMonth == "апреля" || this.personBirthMonth == "июня" || this.personBirthMonth == "сентября" || this.personBirthMonth == "ноября") {
+        } else if (this.person.birthMonth == "апреля" || this.personBirthMonth == "июня" || this.personBirthMonth == "сентября" || this.personBirthMonth == "ноября") {
             birthDay = Math.floor(Math.random() * 30 + 1);
-        } else if (this.randomBirthMonth == "января" || this.personBirthMonth == "марта" || this.personBirthMonth == "мая" || this.personBirthMonth == "июля" || this.personBirthMonth == "августа" || this.personBirthMonth == "октября" || this.personBirthMonth == "декабря") {
+        } else if (this.person.birthMonth == "января" || this.personBirthMonth == "марта" || this.personBirthMonth == "мая" || this.personBirthMonth == "июля" || this.personBirthMonth == "августа" || this.personBirthMonth == "октября" || this.personBirthMonth == "декабря") {
             birthDay = Math.floor(Math.random() * 31 + 1);
         }
         return birthDay;       
