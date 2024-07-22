@@ -69,6 +69,28 @@ const personGenerator = {
         }
     }`,
 
+    qualMaleJson: `{
+        "count": 5,
+        "list": {
+            "id_1": "водитель",
+            "id_2": "слесарь",
+            "id_3": "военнослужащий",
+            "id_4": "токарь",
+            "id_5": "системный администратор"
+        }
+    }`,
+
+    qualFemaleJson: `{
+        "count": 5,
+        "list": {
+            "id_1": "продавщица",
+            "id_2": "швея",
+            "id_3": "машинистка",
+            "id_4": "кассирша",
+            "id_5": "военнослужащая"
+        }
+    }`,
+
     GENDER_MALE: 'Мужчина',
     GENDER_FEMALE: 'Женщина',
 
@@ -148,12 +170,21 @@ const personGenerator = {
 
     },
 
+    randomProfession: function() {
+        if (this.person.gender == "Мужчина") {
+            return this.randomValue(this.qualMaleJson);
+        } else {
+            return this.randomValue(this.qualFemaleJson);
+        }
+    },
+
     getPerson: function () {
         this.person = {};
         this.person.gender = this.randomGender();
         this.person.firstName = this.randomFirstName();
         this.person.middleName = this.randomMiddleName();
         this.person.surname = this.randomSurname();
+        this.person.profession = this.randomProfession();
         this.person.birthDay = this.randomBirthDay();
         this.person.birthMonth = this.randomBirthMonth();
         this.person.birthYear = this.randomBirthYear();
