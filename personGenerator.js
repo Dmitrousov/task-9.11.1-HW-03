@@ -93,13 +93,13 @@ const personGenerator = {
 
         } else if (this.person.gender == "Женщина") { 
             if (middleName == "Никита") {
-                middleName = "Никитич";
+                middleName = "Никитична";
             } else if (middleName == "Михаил") {
-                middleName = "Михайлович";
+                middleName = "Михайловна";
             } else if (middleName == "Александр" || middleName == "Максим" || middleName == "Иван" || middleName == "Артем" || middleName == "Даниил" || middleName == "Егор") {
-                middleName = middleName + "ович";    
+                middleName = middleName + "овна";    
             } else if (middleName == "Дмитрий" || middleName == "Андрей") {
-                middleName = (middleName.slice(0, -1)) + "евич";
+                middleName = (middleName.slice(0, -1)) + "евна";
             }
             return middleName;
         } 
