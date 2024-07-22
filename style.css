@@ -1,0 +1,16 @@
+button {
+	background-color: #17a2b8;
+	color: white; 
+	border-radius: 10px;
+	border-color: #ffc107;
+}
+
+.card-body {
+	background-color: #fffacd;
+}
+
+body {
+	background-image: url(./space.jpg); 
+	background-size: 1400px, 788px; 
+	background-position: center;
+}
