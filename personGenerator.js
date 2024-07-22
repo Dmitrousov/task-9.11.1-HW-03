@@ -82,31 +82,27 @@ const personGenerator = {
         if (this.person.gender == "Мужчина") {
             if (middleName == "Никита") {
                 middleName = "Никитич";
-                return middleName;
-                } if (middleName == "Михаил") {
+            } else if (middleName == "Михаил") {
                 middleName = "Михайлович";
-                return middleName;
-                } if (middleName == "Александр", "Максим", "Иван", "Артем", "Даниил", "Егор") {
+            } else if (middleName == "Александр" || middleName == "Максим" || middleName == "Иван" || middleName == "Артем" || middleName == "Даниил" || middleName == "Егор") {
                 middleName = middleName + "ович";    
-                return middleName;
-                } else if (middleName == "Дмитрий", "Андрей") {
+            } else if (middleName == "Дмитрий" || middleName == "Андрей") {
                 middleName = (middleName.slice(0, -1)) + "евич";
-                return middleName; 
             }
-        } else if (middleName == "Никита") {
-                middleName = "Никитична";
-                return middleName;
-                } if (middleName == "Михаил") {
-                middleName = "Михайловна";
-                return middleName;
-                } if (middleName == "Александр", "Максим", "Иван", "Артем", "Даниил", "Егор") {
-                middleName = middleName + "овна";    
-                return middleName;
-                } else if (middleName == "Дмитрий", "Андрей") {
-                middleName = (middleName.slice(0, -1)) + "евна";
-                return middleName;
-                
-            }    
+            return middleName; 
+
+        } else if (this.person.gender == "Женщина") { 
+            if (middleName == "Никита") {
+                middleName = "Никитич";
+            } else if (middleName == "Михаил") {
+                middleName = "Михайлович";
+            } else if (middleName == "Александр" || middleName == "Максим" || middleName == "Иван" || middleName == "Артем" || middleName == "Даниил" || middleName == "Егор") {
+                middleName = middleName + "ович";    
+            } else if (middleName == "Дмитрий" || middleName == "Андрей") {
+                middleName = (middleName.slice(0, -1)) + "евич";
+            }
+            return middleName;
+        } 
     },
 
     randomSurname: function() {
