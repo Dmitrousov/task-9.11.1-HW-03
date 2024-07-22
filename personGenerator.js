@@ -82,6 +82,18 @@ const personGenerator = {
         return obj.list[prop];
     },
 
+    randomBirthDay: function (){
+        let birthDay = 1;
+        if (this.personBirthMonth == "февраля") {
+            birthDay = Math.floor(Math.random() * (28 - 1) + 1);
+        } else if (this.personBirthMonth == "апреля" || this.personBirthMonth == "июня" || this.personBirthMonth == "сентября" || this.personBirthMonth == "ноября") {
+            birthDay = Math.floor(Math.random() * (30 - 1) + 1);
+        } else if (this.personBirthMonth == "января" || this.personBirthMonth == "марта" || this.personBirthMonth == "мая" || this.personBirthMonth == "июля" || this.personBirthMonth == "августа" || this.personBirthMonth == "октября" || this.personBirthMonth == "декабря") {
+            birthDay = Math.floor(Math.random() * (31 - 1) + 1);
+        }
+        return birthDay;
+    },
+
     randomBirthMonth: function() {
         return this.randomValue(this.birthMonthJson);
     },
@@ -142,6 +154,7 @@ const personGenerator = {
         this.person.firstName = this.randomFirstName();
         this.person.middleName = this.randomMiddleName();
         this.person.surname = this.randomSurname();
+        this.person.birthDay = this.randomBirthDay();
         this.person.birthMonth = this.randomBirthMonth();
         this.person.birthYear = this.randomBirthYear();
         return this.person;

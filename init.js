@@ -6,6 +6,7 @@ window.onload = function()
     document.getElementById('middleNameOutput').innerText = initPerson.middleName;
     document.getElementById('surnameOutput').innerText = initPerson.surname;
     document.getElementById('genderOutput').innerText = initPerson.gender;
+    document.getElementById('birthDayOutput').innerText = initPerson.birthDay;
     document.getElementById('birthMonthOutput').innerText = initPerson.birthMonth;
     document.getElementById('birthYearOutput').innerText = initPerson.birthYear + ' года рождения';
 };
@@ -16,6 +17,7 @@ window.onload = function()
 		document.getElementById('middleNameOutput').innerText = 'Иванович';
 		document.getElementById('surnameOutput').innerText = 'Генерация фамилии';
     	document.getElementById('genderOutput').innerText = 'Генерация пола';
+    	document.getElementById('birthDayOutput').innerText = '1';
     	document.getElementById('birthMonthOutput').innerText = ' января ';
     	document.getElementById('birthYearOutput').innerText = 'Генерация года рождения';
 		}
